@@ -22,7 +22,7 @@ app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
   res.render("index", {
-    title: "Weather App",
+    title: "Weather",
     name: "Julie Ann De Leon",
   });
 });
@@ -56,7 +56,7 @@ app.get("/weather", (req, res) => {
         return res.send({ error });
       }
 
-      forecast(longitude, latitude, (error, forecastData) => {
+      forecast(latitude, longitude, (error, forecastData) => {
         if (error) {
           return res.send({ error });
         }
